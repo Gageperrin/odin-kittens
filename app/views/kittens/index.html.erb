@@ -1,0 +1,13 @@
+<h1>The Kitty Index</h1>
+
+<ul>
+	<% @kittens.each do |k| %>
+		<li>
+		<%= link_to k.name, k %>
+		<%= link_to "edit", edit_kitten_path(k) %>
+		<%= link_to "delete", k, method: :delete,
+																data: { confirm: "Are you sure?"} %>
+		</li>
+	<% end %>
+	<%= link_to "Create new kitten", new_kitten_path %>
+</ul>
